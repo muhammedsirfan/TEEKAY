@@ -1,36 +1,62 @@
-// WhatsApp numbers are chosen in the quote form (see the "Send to" dropdown in index.html)
-
 // Mobile menu
 const burger = document.getElementById("burger");
-const navLinks = document.getElementById("navLinks");
+const links = document.getElementById("links");
 burger.addEventListener("click", () => {
   burger.classList.toggle("open");
-  navLinks.classList.toggle("open");
+  links.classList.toggle("open");
 });
-navLinks.querySelectorAll("a").forEach(a =>
+links.querySelectorAll("a").forEach(a =>
   a.addEventListener("click", () => {
     burger.classList.remove("open");
-    navLinks.classList.remove("open");
+    links.classList.remove("open");
   })
 );
 
-// Navbar background on scroll
+// Scroll: nav state, progress bar, hero parallax
 const nav = document.getElementById("nav");
-const onScroll = () => nav.classList.toggle("scrolled", window.scrollY > 40);
-window.addEventListener("scroll", onScroll, { passive: true });
+const bar = document.getElementById("progress");
+const heroImg = document.getElementById("heroImg");
+const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+let ticking = false;
+function onScroll() {
+  const y = window.scrollY;
+  const max = document.documentElement.scrollHeight - window.innerHeight;
+  nav.classList.toggle("scrolled", y > 40);
+  bar.style.width = (max > 0 ? (y / max) * 100 : 0) + "%";
+  if (!reduce && heroImg && y < window.innerHeight * 1.2) {
+    heroImg.style.transform = `translateY(${y * 0.25}px) scale(1.08)`;
+  }
+  ticking = false;
+}
+window.addEventListener("scroll", () => {
+  if (!ticking) { requestAnimationFrame(onScroll); ticking = true; }
+}, { passive: true });
 onScroll();
 
-// Reveal on scroll
-const io = new IntersectionObserver(
-  entries => entries.forEach(e => {
+// Reveal on scroll (with small stagger inside grids)
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => {
     if (e.isIntersecting) {
       e.target.classList.add("in");
       io.unobserve(e.target);
     }
-  }),
-  { threshold: 0.12 }
-);
+  });
+}, { threshold: 0.12 });
+document.querySelectorAll(".bento, .steps, .hero-copy, .people").forEach(group => {
+  group.querySelectorAll(".reveal").forEach((el, i) => {
+    el.style.transitionDelay = (i * 90) + "ms";
+  });
+});
 document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+
+// Spotlight follows the cursor on product tiles
+document.querySelectorAll(".spot").forEach(card => {
+  card.addEventListener("pointermove", e => {
+    const r = card.getBoundingClientRect();
+    card.style.setProperty("--mx", (e.clientX - r.left) + "px");
+    card.style.setProperty("--my", (e.clientY - r.top) + "px");
+  });
+});
 
 // Quote form -> WhatsApp
 document.getElementById("quoteForm").addEventListener("submit", e => {
@@ -39,7 +65,7 @@ document.getElementById("quoteForm").addEventListener("submit", e => {
   const phone = document.getElementById("fPhone").value.trim();
   const msg = document.getElementById("fMsg").value.trim();
   const to = document.getElementById("fTo").value;
-  const text = `Hello TEEKAY GLASS & HARDWARE,\nName: ${name}\nPhone: ${phone}\nRequirement: ${msg}`;
+  const text = `Hello TEEKAY HARDWARE & PLYWOOD,\nName: ${name}\nPhone: ${phone}\nRequirement: ${msg}`;
   window.open(`https://wa.me/${to}?text=${encodeURIComponent(text)}`, "_blank", "noopener");
 });
 
