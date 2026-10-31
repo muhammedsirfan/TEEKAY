@@ -194,7 +194,7 @@ h3{font-size:1.5rem;font-weight:700}
 .copy{text-align:center;color:var(--muted);font-size:.88rem}
 
 /* whatsapp */
-.wa-float{position:fixed;right:20px;bottom:20px;width:60px;height:60px;border-radius:50%;background:#25d366;color:#fff;display:grid;place-items:center;z-index:80;box-shadow:0 10px 30px rgba(37,211,102,.5);animation:ring 3s infinite}
+.wa-float{border:0;cursor:pointer;position:relative;width:60px;height:60px;border-radius:50%;background:#25d366;color:#fff;display:grid;place-items:center;z-index:80;box-shadow:0 10px 30px rgba(37,211,102,.5);animation:ring 3s infinite}
 .wa-float svg{width:30px;height:30px}
 @keyframes ring{0%,100%{box-shadow:0 10px 30px rgba(37,211,102,.5),0 0 0 0 rgba(37,211,102,.5)}60%{box-shadow:0 10px 30px rgba(37,211,102,.5),0 0 0 16px rgba(37,211,102,0)}}
 
@@ -225,4 +225,54 @@ h3{font-size:1.5rem;font-weight:700}
 @media(prefers-reduced-motion:reduce){
   *{animation:none!important;transition:none!important}
   .reveal{opacity:1;transform:none;filter:none}
+}
+
+/* ===== hidden attribute must always win ===== */
+[hidden]{display:none!important}
+
+/* ===== gallery ===== */
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem}
+.gallery-grid img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:22px;border:1px solid var(--line);background:var(--bg-2);cursor:zoom-in;transition:transform .45s,filter .3s,border-color .3s}
+.gallery-grid img:hover{transform:translateY(-5px) scale(1.015);filter:brightness(1.1);border-color:rgba(255,174,15,.55)}
+.gallery-grid img.is-hidden{display:none}
+.gallery-more{text-align:center;margin-top:2.2rem}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:120;display:none;align-items:center;justify-content:center;background:rgba(5,4,4,.93);backdrop-filter:blur(8px)}
+.lb.open{display:flex}
+.lb img{max-width:92vw;max-height:84vh;border-radius:16px;box-shadow:0 30px 80px rgba(0,0,0,.6);object-fit:contain}
+.lb button{position:absolute;width:48px;height:48px;border-radius:50%;border:1px solid var(--line);background:rgba(255,255,255,.1);color:#fff;font-size:1.5rem;cursor:pointer;display:grid;place-items:center;backdrop-filter:blur(8px)}
+.lb button:hover{background:rgba(255,255,255,.22)}
+.lb .lb-x{top:18px;right:18px}.lb .lb-p{left:14px;top:50%;translate:0 -50%}.lb .lb-n{right:14px;top:50%;translate:0 -50%}
+.lb-count{position:absolute;bottom:18px;left:50%;translate:-50% 0;color:var(--muted);font-weight:600;font-size:.9rem}
+.lb-cap{position:absolute;bottom:46px;left:50%;translate:-50% 0;color:#fff;font-weight:600;max-width:84vw;text-align:center;font-size:.95rem}
+
+/* ===== floating WhatsApp chooser ===== */
+.wa-widget{position:fixed;right:20px;bottom:20px;z-index:80;display:flex;flex-direction:column;align-items:flex-end;gap:.8rem}
+.wa-float .i-x{display:none}
+.wa-widget.open .wa-float .i-wa{display:none}
+.wa-widget.open .wa-float .i-x{display:block}
+.wa-float svg{width:30px;height:30px}
+.wa-menu{width:min(310px,86vw);padding:.6rem;border-radius:24px;background:rgba(18,13,12,.96);border:1px solid var(--line);backdrop-filter:blur(18px);box-shadow:0 24px 60px rgba(0,0,0,.6);transform-origin:bottom right;opacity:0;transform:translateY(14px) scale(.94);pointer-events:none;transition:opacity .25s,transform .25s}
+.wa-widget.open .wa-menu{opacity:1;transform:none;pointer-events:auto}
+.wa-title{padding:.7rem .9rem .8rem;border-bottom:1px solid var(--line);margin-bottom:.4rem}
+.wa-title b{display:block;font-family:var(--display);font-size:1.1rem}
+.wa-title small{color:var(--muted);font-size:.85rem}
+.wa-menu a{display:flex;align-items:center;gap:.85rem;padding:.7rem .8rem;border-radius:16px;transition:background .2s}
+.wa-menu a:hover{background:rgba(255,255,255,.08)}
+.wa-menu a b{display:block;font-size:.98rem}
+.wa-menu a small{color:var(--muted);font-size:.8rem}
+.wa-av{flex:none;width:42px;height:42px;border-radius:50%;background:#25d366;color:#04210f;display:grid;place-items:center;font-weight:800;font-size:.9rem}
+
+@media(max-width:760px){
+  .gallery-grid{grid-template-columns:repeat(2,1fr);gap:.7rem}
+  .gallery-grid img{aspect-ratio:1/1;border-radius:16px}
+  .gallery-grid img:nth-child(3n+1){grid-column:span 2;aspect-ratio:16/10}
+  .lb .lb-p{left:6px}.lb .lb-n{right:6px}
+  .wa-widget{right:14px;bottom:14px}
+}
+
+@media(min-width:761px) and (max-width:1020px){
+  .links{gap:1rem;font-size:.9rem}
+  .brand small{display:none}
 }

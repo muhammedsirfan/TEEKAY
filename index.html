@@ -9,7 +9,7 @@
   <meta property="og:title" content="TEEKAY HARDWARE & PLYWOOD – South Bazar, Kannur" />
   <meta property="og:description" content="Plywood, multiwood, laminated sheets, hardware, kitchen accessories & glass – everything for your interiors." />
   <meta property="og:image" content="images/storefront.jpg" />
-  <link rel="icon" href="logo.jpg" />
+  <link rel="icon" href="logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -22,11 +22,12 @@
   <!-- NAV -->
   <header class="nav" id="nav">
     <a href="#home" class="brand">
-      <img src="logo.jpg" alt="TEEKAY logo" width="44" height="44" />
+      <img src="logo.png" alt="TEEKAY logo" width="44" height="44" />
       <span>TEEKAY<small>HARDWARE &amp; PLYWOOD</small></span>
     </a>
     <nav class="links" id="links">
       <a href="#products">Products</a>
+      <a href="#gallery">Gallery</a>
       <a href="#interiors">Interiors</a>
       <a href="#visit">Visit</a>
       <a href="#founder">Our Story</a>
@@ -49,16 +50,11 @@
         <p class="lead reveal">Plywood, multiwood, laminated sheets, hardware, kitchen accessories and glass – all under one roof at <strong>TEEKAY HARDWARE &amp; PLYWOOD</strong>.</p>
         <div class="cta-row reveal">
           <a href="#products" class="btn btn-primary">Explore products <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-          <a href="https://wa.me/919847606446" target="_blank" rel="noopener" class="btn btn-glass">WhatsApp us</a>
+          <a href="https://wa.me/919847606446" target="_blank" rel="noopener" class="btn btn-glass" data-wa-open>WhatsApp us</a>
         </div>
       </div>
 
-      <aside class="hero-float reveal">
-        <div class="glass-card g1"><span>01</span><b>Plywood</b></div>
-        <div class="glass-card g2"><span>02</span><b>Multiwood</b></div>
-        <div class="glass-card g3"><span>03</span><b>Laminates</b></div>
-        <div class="glass-card g4"><span>04</span><b>Hardware</b></div>
-      </aside>
+      
     </div>
     <a href="#products" class="scroll-hint" aria-label="Scroll down"><i></i></a>
   </section>
@@ -71,104 +67,136 @@
     </div>
   </div>
 
- <!-- PRODUCTS (bento) -->
-<section class="section" id="products">
-  <div class="wrap">
-    <div class="head reveal">
-      <span class="kicker">What we offer</span>
-      <h2>Everything your project <em>needs.</em></h2>
-      <p>From the big boards to the smallest fittings – pick it all in one visit.</p>
+  <!-- PRODUCTS (bento) -->
+  <section class="section" id="products">
+    <div class="wrap">
+      <div class="head reveal">
+        <span class="kicker">What we offer</span>
+        <h2>Everything your project <em>needs.</em></h2>
+        <p>From the big boards to the smallest fittings – pick it all in one visit.</p>
+      </div>
+
+      <div class="bento">
+
+        <!-- 01 Plywood -->
+        <article class="tile tile-photo t-ply reveal">
+          <div class="photo" style="background-image:url('images/plywood.jpg')"></div>
+          <div class="photo-shade"></div>
+          <div class="tile-body">
+            <div class="num">01</div>
+            <h3>Plywood</h3>
+            <p>Strong, dependable plywood for wardrobes, kitchens, cabinets, furniture and complete interior work.</p>
+            <a href="#contact" class="more">Enquire now
+              <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- 02 Multiwood -->
+        <article class="tile tile-photo t-multi reveal">
+          <div class="photo" style="background-image:url('images/multiwood.webp')"></div>
+          <div class="photo-shade"></div>
+          <div class="tile-body">
+            <div class="num">02</div>
+            <h3>Multiwood</h3>
+            <p>Versatile multiwood boards for cabinets, shelving, partitions and custom furniture builds.</p>
+            <a href="#contact" class="more">Enquire now
+              <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- 03 Laminated Sheets -->
+        <article class="tile tile-photo t-lam reveal">
+          <div class="photo" style="background-image:url('images/laminated.jpg')"></div>
+          <div class="photo-shade"></div>
+          <div class="tile-body">
+            <div class="num">03</div>
+            <h3>Laminated Sheets</h3>
+            <p>Wood grains, marble looks, solids and more – browse catalogues from leading laminate brands and pick the finish that suits your space.</p>
+            <a href="#contact" class="more">Enquire now
+              <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- 04 Hardware -->
+        <article class="tile tile-photo t-hw reveal">
+          <div class="photo" style="background-image:url('images/hardware.jpg')"></div>
+          <div class="photo-shade"></div>
+          <div class="tile-body">
+            <div class="num">04</div>
+            <h3>Hardware</h3>
+            <p>Locks, hinges, handles, channels, screws and fittings – the details that decide how long a job lasts.</p>
+            <a href="#contact" class="more">Enquire now
+              <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- 05 Kitchen Accessories -->
+        <article class="tile tile-photo t-kit reveal">
+          <div class="photo" style="background-image:url('images/kitchen.jpeg')"></div>
+          <div class="photo-shade"></div>
+          <div class="tile-body">
+            <div class="num">05</div>
+            <h3>Kitchen Accessories</h3>
+            <p>Baskets, drawer fittings, storage and organisers that make a kitchen neat and easy to use.</p>
+            <a href="#contact" class="more">Enquire now
+              <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- 06 Glass -->
+        <article class="tile tile-photo t-glass reveal">
+          <div class="photo" style="background-image:url('images/glass.jpg')"></div>
+          <div class="photo-shade"></div>
+          <div class="tile-body">
+            <div class="num">06</div>
+            <h3>Glass</h3>
+            <p>Glass and mirrors for windows, doors, partitions, tabletops and furniture.</p>
+            <a href="#contact" class="more">Enquire now
+              <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+        </article>
+
+      </div>
     </div>
+  </section>
 
-    <div class="bento">
+  <!-- GALLERY -->
+  <section class="section gallery" id="gallery">
+    <div class="wrap">
+      <div class="head reveal">
+        <span class="kicker">Gallery</span>
+        <h2>A look <em>inside.</em></h2>
+        <p>Our store, our stock and our work. Tap any photo to view it full screen.</p>
+      </div>
 
-      <!-- 01 Plywood -->
-      <article class="tile tile-photo t-ply reveal">
-        <div class="photo" style="background-image:url('images/plywood.jpg')"></div>
-        <div class="photo-shade"></div>
-        <div class="tile-body">
-          <div class="num">01</div>
-          <h3>Plywood</h3>
-          <p>Strong, dependable plywood for wardrobes, kitchens, cabinets, furniture and complete interior work.</p>
-          <a href="#contact" class="more">Enquire now
-            <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
-        </div>
-      </article>
+      <!--
+        HOW TO ADD A PHOTO:
+        1. Put the image file inside the "gallery" folder.
+        2. Copy ONE line below, paste it at the end of the list (just above the closing </div>),
+           and change the file name and the short description.
+        The first 3 photos show on the page; the rest appear when visitors tap "View more".
+      -->
+      <div class="gallery-grid" id="gallery-grid">
+        <img src="gallery/Modern Door Hardware Showroom Display.png" alt="Modern door hardware showroom display" loading="lazy" />
+        <img src="gallery/Modern Hardware and Laminate Showroom.png" alt="Modern hardware and laminate showroom" loading="lazy" />
+        <img src="gallery/Modern Hardware Showroom Display.png" alt="Modern hardware showroom display" loading="lazy" />
+        <img src="gallery/Modern Hardware Store Counter Display.png" alt="Modern hardware store counter display" loading="lazy" />
+        <img src="gallery/Organised Hardware Showroom Display.png" alt="Organised hardware showroom display" loading="lazy" />
+        <img src="gallery/Organised Hardware Store Shelves.png" alt="Organised hardware store shelves" loading="lazy" />
+        <img src="gallery/Organized Hardware and Paint Showroom.png" alt="Organized hardware and paint showroom" loading="lazy" />
+        <img src="gallery/Organized Hardware Shop Aisle.png" alt="Organized hardware shop aisle" loading="lazy" />
+        <img src="gallery/plywood.webp" alt="Plywood" loading="lazy" />
+      </div>
 
-      <!-- 02 Multiwood -->
-      <article class="tile tile-photo t-multi reveal">
-        <div class="photo" style="background-image:url('images/multiwood.webp')"></div>
-        <div class="photo-shade"></div>
-        <div class="tile-body">
-          <div class="num">02</div>
-          <h3>Multiwood</h3>
-          <p>Versatile multiwood boards for cabinets, shelving, partitions and custom furniture builds.</p>
-          <a href="#contact" class="more">Enquire now
-            <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
-        </div>
-      </article>
-
-      <!-- 03 Laminated Sheets -->
-      <article class="tile tile-photo t-lam reveal">
-        <div class="photo" style="background-image:url('images/laminated.jpg')"></div>
-        <div class="photo-shade"></div>
-        <div class="tile-body">
-          <div class="num">03</div>
-          <h3>Laminated Sheets</h3>
-          <p>Wood grains, marble looks, solids and more – browse catalogues from leading laminate brands and pick the finish that suits your space.</p>
-          <a href="#contact" class="more">Enquire now
-            <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
-        </div>
-      </article>
-
-      <!-- 04 Hardware -->
-      <article class="tile tile-photo t-hw reveal">
-        <div class="photo" style="background-image:url('images/hardware.jpg')"></div>
-        <div class="photo-shade"></div>
-        <div class="tile-body">
-          <div class="num">04</div>
-          <h3>Hardware</h3>
-          <p>Locks, hinges, handles, channels, screws and fittings – the details that decide how long a job lasts.</p>
-          <a href="#contact" class="more">Enquire now
-            <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
-        </div>
-      </article>
-
-      <!-- 05 Kitchen Accessories -->
-      <article class="tile tile-photo t-kit reveal">
-        <div class="photo" style="background-image:url('images/kitchen.jpeg')"></div>
-        <div class="photo-shade"></div>
-        <div class="tile-body">
-          <div class="num">05</div>
-          <h3>Kitchen Accessories</h3>
-          <p>Baskets, drawer fittings, storage and organisers that make a kitchen neat and easy to use.</p>
-          <a href="#contact" class="more">Enquire now
-            <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
-        </div>
-      </article>
-
-      <!-- 06 Glass -->
-      <article class="tile tile-photo t-glass reveal">
-        <div class="photo" style="background-image:url('images/glass.jpg')"></div>
-        <div class="photo-shade"></div>
-        <div class="tile-body">
-          <div class="num">06</div>
-          <h3>Glass</h3>
-          <p>Glass and mirrors for windows, doors, partitions, tabletops and furniture.</p>
-          <a href="#contact" class="more">Enquire now
-            <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
-        </div>
-      </article>
-
+      <div class="gallery-more reveal"><button type="button" class="btn btn-glass" id="galleryMore" hidden>View more</button></div>
     </div>
-  </div>
-</section>
+  </section>
 
   <!-- INTERIORS -->
   <section class="section interiors" id="interiors">
@@ -192,7 +220,7 @@
     <div class="wrap">
       <div class="head reveal">
         <span class="kicker">Find us</span>
-        <h2>Visit us at <em>South Bazar.</em></h2>
+        <h2>Visit us at <em>South Bazar, Kannur</em></h2>
         <p>Look for the TK sign – we're right in the heart of Kannur's South Bazar market area.</p>
       </div>
 
@@ -293,11 +321,11 @@
     <div class="wrap">
       <div class="foot-top">
         <a href="#home" class="brand">
-          <img src="logo.jpg" alt="TEEKAY logo" width="44" height="44" />
+          <img src="logo.png" alt="TEEKAY logo" width="44" height="44" />
           <span>TEEKAY<small>HARDWARE &amp; PLYWOOD</small></span>
         </a>
         <nav class="foot-links">
-          <a href="#products">Products</a><a href="#interiors">Interiors</a><a href="#visit">Visit</a><a href="#contact">Contact</a><a href="#founder">Our Story</a>
+          <a href="#products">Products</a><a href="#gallery">Gallery</a><a href="#interiors">Interiors</a><a href="#visit">Visit</a><a href="#contact">Contact</a><a href="#founder">Our Story</a>
         </nav>
       </div>
       <div class="giant" aria-hidden="true">TEEKAY</div>
@@ -305,9 +333,18 @@
     </div>
   </footer>
 
-  <a class="wa-float" href="https://wa.me/919847606446" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
-    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A11 11 0 0 0 3.2 17.3L2 22l4.8-1.3A11 11 0 1 0 20.5 3.5zM12 20a9 9 0 0 1-4.6-1.3l-.3-.2-2.8.8.8-2.7-.2-.3A9 9 0 1 1 12 20zm5-6.7c-.3-.1-1.6-.8-1.9-.9s-.5-.1-.7.1-.8.9-.9 1.1-.3.2-.6.1a7.4 7.4 0 0 1-3.7-3.2c-.3-.5.3-.5.8-1.5a.6.6 0 0 0 0-.5c-.1-.1-.7-1.600-.9-2.200s-.5-.5-.7-.5h-.6a1.200 1.200 0 0 0-.9.4 3.700 3.700 0 0 0-1.100 2.700 6.400 6.400 0 0 0 1.400 3.400 14.700 14.700 0 0 0 5.600 4.900c2.100.9 2.100.6 2.500.6a2.100 2.100 0 0 0 1.400-1 1.700 1.700 0 0 0 .1-1c0-.1-.2-.2-.5-.3z"/></svg>
-  </a>
+  <div class="wa-widget" id="waWidget">
+    <div class="wa-menu" id="waMenu" role="menu" aria-hidden="true">
+      <div class="wa-title"><b>Chat on WhatsApp</b><small>Who would you like to message?</small></div>
+      <a href="https://wa.me/919847606446?text=Hello%20TEEKAY%20HARDWARE%20%26%20PLYWOOD%2C%20I%20would%20like%20to%20enquire%20about%20your%20products." target="_blank" rel="noopener"><span class="wa-av">AS</span><span><b>Abdul Salam TK</b><small>+91 98476 06446</small></span></a>
+      <a href="https://wa.me/918129034945?text=Hello%20TEEKAY%20HARDWARE%20%26%20PLYWOOD%2C%20I%20would%20like%20to%20enquire%20about%20your%20products." target="_blank" rel="noopener"><span class="wa-av">MS</span><span><b>Mohammad Safwan C</b><small>+91 81290 34945</small></span></a>
+      <a href="https://wa.me/918590665337?text=Hello%20TEEKAY%20HARDWARE%20%26%20PLYWOOD%2C%20I%20would%20like%20to%20enquire%20about%20your%20products." target="_blank" rel="noopener"><span class="wa-av">OF</span><span><b>Office</b><small>+91 85906 65337</small></span></a>
+    </div>
+    <button type="button" class="wa-float" id="waBtn" aria-label="Chat on WhatsApp" aria-expanded="false" aria-controls="waMenu">
+      <svg class="i-wa" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A11 11 0 0 0 3.2 17.3L2 22l4.8-1.3A11 11 0 1 0 20.5 3.5zM12 20a9 9 0 0 1-4.6-1.3l-.3-.2-2.8.8.8-2.7-.2-.3A9 9 0 1 1 12 20zm5-6.7c-.3-.1-1.6-.8-1.9-.9s-.5-.1-.7.1-.8.9-.9 1.1-.3.2-.6.1a7.4 7.4 0 0 1-3.7-3.2c-.3-.5.3-.5.8-1.5a.6.6 0 0 0 0-.5c-.1-.1-.7-1.6-.9-2.2s-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.7 3.7 0 0 0-1.1 2.7 6.4 6.4 0 0 0 1.4 3.4 14.700 14.700 0 0 0 5.600 4.900c2.100.9 2.100.6 2.500.6a2.100 2.100 0 0 0 1.400-1 1.700 1.700 0 0 0 .1-1c0-.1-.2-.2-.5-.3z"/></svg>
+      <svg class="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
 
   <script src="script.js"></script>
 </body>
