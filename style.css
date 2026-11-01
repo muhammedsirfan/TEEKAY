@@ -414,3 +414,47 @@ html.no-scroll,html.no-scroll body{overflow:hidden}
   .contact-copy>p{margin-bottom:0}
   .map-row{margin-top:.9rem}
 }
+
+/* =====================================================================
+   PHONE: make Visit / Get in touch / Our Story fit on one screen
+   (sizes scale with the phone's screen height using svh units)
+   ===================================================================== */
+@media(max-width:760px){
+  .visit,.contact,.founder{padding:28px 0}
+  .visit h2,.contact h2,.founder h2{font-size:clamp(1.55rem,7.4vw,1.95rem)}
+
+  /* Visit */
+  .visit .head{margin-bottom:.9rem}
+  .visit .head p{font-size:.9rem;margin-top:.5rem}
+  .store{border-radius:20px}
+  .store img{aspect-ratio:auto;height:clamp(105px,16.5svh,170px)}
+  .map-row{margin-top:.7rem}
+  .map-card{min-height:0;height:clamp(165px,28svh,300px);border-radius:20px}
+  .map-card iframe{min-height:0;height:100%}
+
+  /* Get in touch (quote form only) */
+  .contact-grid{gap:.9rem}
+  .contact-copy>p{display:none}
+  .form{padding:1rem 1.1rem;border-radius:22px}
+  .form h3{display:none}
+  .form label{margin-bottom:.6rem;font-size:.82rem}
+  .form input,.form select{padding:.72rem .95rem;margin-top:.28rem}
+  .form textarea{padding:.72rem .95rem;margin-top:.28rem;height:76px;resize:none}
+  .form .btn{padding:.9rem;margin-top:.15rem}
+
+  /* Our story */
+  .founder-grid{gap:1.1rem}
+  .founder-photo{max-width:none}
+  .frame{padding:6px;border-radius:24px}
+  .frame img{aspect-ratio:auto;height:clamp(115px,20svh,190px);border-radius:18px;object-position:30% 35%}
+  .badge{padding:.5rem .9rem;bottom:-14px;border-radius:14px}
+  .badge b{font-size:.98rem}
+  .badge span{font-size:.7rem}
+  .founder-copy .kicker{margin-bottom:.4rem}
+  .founder-copy p{font-size:.9rem;line-height:1.5;margin:.55rem 0}
+}
+
+/* Phone: no name box on the founder photo (heading + text already name him) */
+@media(max-width:760px){
+  .badge{display:none}
+}

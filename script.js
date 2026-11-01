@@ -5,13 +5,13 @@ const isMobile = () => mq.matches;
 // Mobile menu
 const burger = document.getElementById("burger");
 const links = document.getElementById("links");
-burger.addEventListener("click", () => {
+if (burger && links) burger.addEventListener("click", () => {
   burger.classList.toggle("open");
   links.classList.toggle("open");
 });
-links.querySelectorAll("a").forEach(a =>
+if (links) links.querySelectorAll("a").forEach(a =>
   a.addEventListener("click", () => {
-    burger.classList.remove("open");
+    if (burger) burger.classList.remove("open");
     links.classList.remove("open");
   })
 );
@@ -25,8 +25,8 @@ let ticking = false;
 function onScroll() {
   const y = window.scrollY;
   const max = document.documentElement.scrollHeight - window.innerHeight;
-  nav.classList.toggle("scrolled", y > 40);
-  bar.style.transform = `scaleX(${max > 0 ? y / max : 0})`;
+  if (nav) nav.classList.toggle("scrolled", y > 40);
+  if (bar) bar.style.transform = `scaleX(${max > 0 ? y / max : 0})`;
   if (!reduce && !isMobile() && heroImg && y < window.innerHeight * 1.2) {
     heroImg.style.transform = `translateY(${y * 0.25}px) scale(1.08)`;
   }
@@ -63,7 +63,8 @@ document.querySelectorAll(".spot").forEach(card => {
 });
 
 // Quote form -> WhatsApp
-document.getElementById("quoteForm").addEventListener("submit", e => {
+const quoteForm = document.getElementById("quoteForm");
+if (quoteForm) quoteForm.addEventListener("submit", e => {
   e.preventDefault();
   const name = document.getElementById("fName").value.trim();
   const phone = document.getElementById("fPhone").value.trim();
@@ -74,7 +75,8 @@ document.getElementById("quoteForm").addEventListener("submit", e => {
 });
 
 // Footer year
-document.getElementById("year").textContent = new Date().getFullYear();
+const yearEl = document.getElementById("year");
+if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 // ===== Product "Enquire now" -> WhatsApp with a ready-to-edit message =====
 // Who receives product enquiries (country code + number, no + or spaces).
@@ -152,12 +154,13 @@ const waWidget = document.getElementById("waWidget");
 const waBtn = document.getElementById("waBtn");
 const waMenu = document.getElementById("waMenu");
 function setWa(open) {
+  if (!waWidget || !waBtn || !waMenu) return;
   waWidget.classList.toggle("open", open);
   waBtn.setAttribute("aria-expanded", open);
   waMenu.setAttribute("aria-hidden", !open);
 }
-waBtn.addEventListener("click", e => { e.stopPropagation(); setWa(!waWidget.classList.contains("open")); });
-document.addEventListener("click", e => { if (!waWidget.contains(e.target)) setWa(false); });
+if (waBtn) waBtn.addEventListener("click", e => { e.stopPropagation(); setWa(!waWidget.classList.contains("open")); });
+document.addEventListener("click", e => { if (waWidget && !waWidget.contains(e.target)) setWa(false); });
 document.addEventListener("keydown", e => { if (e.key === "Escape") setWa(false); });
 document.querySelectorAll("[data-wa-open]").forEach(el =>
   el.addEventListener("click", e => { e.preventDefault(); e.stopPropagation(); openContact("wa"); })
