@@ -51,7 +51,7 @@ h3{font-size:1.5rem;font-weight:700}
 .nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);width:min(1120px,94%);z-index:90;display:flex;align-items:center;justify-content:space-between;padding:.55rem .7rem .55rem .6rem;border-radius:999px;background:rgba(18,13,12,.55);border:1px solid var(--line);backdrop-filter:blur(18px) saturate(1.4);transition:background .3s,top .3s}
 .nav.scrolled{background:rgba(12,9,8,.85)}
 .brand{display:flex;align-items:center;gap:.7rem}
-.brand img{width:44px;height:44px;border-radius:50%;background:#fff;padding:4px;object-fit:contain}
+.brand img{height:38px;width:auto;border-radius:0;background:none;padding:0;object-fit:contain}
 .brand span{display:flex;flex-direction:column;font-family:var(--display);font-weight:800;letter-spacing:.14em;font-size:1.05rem;line-height:1}
 .brand small{font-family:var(--body);font-weight:600;font-size:.58rem;letter-spacing:.2em;color:var(--muted);margin-top:4px}
 .links{display:flex;align-items:center;gap:1.7rem;font-weight:600;font-size:.95rem}
@@ -405,4 +405,12 @@ html.no-scroll,html.no-scroll body{overflow:hidden}
   .mbar svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
   .mbar .m-wa{background:#25d366;border-color:#25d366;color:#04210f}
   .mbar .m-wa svg{fill:currentColor;stroke:none}
+}
+
+/* ===== Phone: remove duplicates of what the bottom bar already offers ===== */
+@media(max-width:760px){
+  .addr-card{display:none}        /* "Get directions" / "Call the shop" – map + bottom bar cover this */
+  .people{display:none}           /* 3 call/WhatsApp cards – bottom bar covers this */
+  .contact-copy>p{margin-bottom:0}
+  .map-row{margin-top:.9rem}
 }
